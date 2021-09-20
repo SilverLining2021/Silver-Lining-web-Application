@@ -2,11 +2,11 @@
 
 ### The Team
 **The name of our team is Silver Lining. Our members are:**
-Cameron Conn, cmc19v
-Omar Pippin, oyp17
-Austin Schmid, ats20bb
-Michael Stevens, ms20
-Luciano Zavala, lez17b
+- Cameron Conn, cmc19v
+- Omar Pippin, oyp17
+- Austin Schmid, ats20bb
+- Michael Stevens, ms20
+- Luciano Zavala, lez17b
 
 ### Problem Statement
 Weather influences our lives. Many outdoor activities are enhanced, degraded, or made outright impossible with 
@@ -44,3 +44,22 @@ UI built with HTML, CSS, and JavaScript. Our app will query third-party map and 
 localized and relevant weather information. We will store user-relevant and frequently accessed data in a local 
 database such as Postgresql or MongoDB. For weather data we will query public APIs such as the OpenWeatherMap API or 
 NOAA’s Web Service API. For maps we will use permissively-licensed data from OpenStreetMap.
+
+### Running and cloning the code
+The code is based on a Github CI/CD structure for managing versions and also to collaborate.
+To run the code type the following commands in the terminal:
+```
+    git init
+    git clonehttps://github.com/SilverLining2021/Silver-Lining-web-Application.git
+```
+Once you have the repository cloned into your local machine you will be able to pull and push changes from the 
+remote branch. For remotely updating the code type the following commands:
+```
+    git add -A
+    git commit -m 'message'
+```
+For the push you cna use the integrated Intellij IDEA green arrow to push.
+In case you wna to update your code from the main branch please run the following commmand:
+```
+    git pull
+```
