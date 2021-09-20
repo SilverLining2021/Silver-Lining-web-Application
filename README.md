@@ -24,17 +24,16 @@ of operation, reviews, costs, weather conditions, and a way of connecting with u
 location.
 
 ### Goals
-**Relevance:** Show users relevant weather information for activities they care about.
-**Health:** Help our users enjoy the outdoors and live healthier lives.
-**Academic:** Get an A in CEN 4090L.
-**Involvement:** Create a messaging system that connects our users.
-Stretch Goals
-**Tips/Reminders:** Our app could implement things like reminders or tips for sports they care about. For example, 
+- **Relevance:** Show users relevant weather information for activities they care about.
+- **Health:** Help our users enjoy the outdoors and live healthier lives.
+- **Academic:** Get an A in CEN 4090L.
+- **Involvement:** Create a messaging system that connects our users.
+- **Stretch Goals Tips/Reminders:** Our app could implement things like reminders or tips for sports they care about. For example, 
 the app could remind users to get a certain number of hours of exercise each week.
-**Affiliated Links:** Our app could link to third parties that provide equipment rentals or training for an activity.
-**Activity Discounts:** We would like to incentivize users to keep participating in outdoor activities with things 
+- **Affiliated Links:** Our app could link to third parties that provide equipment rentals or training for an activity.
+- **Activity Discounts:** We would like to incentivize users to keep participating in outdoor activities with things 
 such as gear-rental or in-store discount coupons.
-**Scheduling:** We would like to implement a scheduling or calendar feature that allows our users to plan their 
+- **Scheduling:** We would like to implement a scheduling or calendar feature that allows our users to plan their 
 sporting activities. For example, our app could predict the quality of weather a location will have favorable weather 
 on a given day. This could be implemented as a prediction system or with a rating with machine learning.
 
