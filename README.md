@@ -48,7 +48,6 @@ NOAA’s Web Service API. For maps we will use permissively-licensed data from O
 The code is based on a Github CI/CD structure for managing versions and also to collaborate.
 To run the code type the following commands in the terminal:
 ```
-    git init
     git clonehttps://github.com/SilverLining2021/Silver-Lining-web-Application.git
 ```
 Once you have the repository cloned into your local machine you will be able to pull and push changes from the 
