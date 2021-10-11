@@ -35,4 +35,7 @@ dependencies{
 
     testImplementation("io.ktor:ktor-server-tests:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")
+    // https://mvnrepository.com/artifact/org.freemarker/freemarker
+    implementation("io.ktor:ktor-freemarker:$ktor_version")
+
 }
