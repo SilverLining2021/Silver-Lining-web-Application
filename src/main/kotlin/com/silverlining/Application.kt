@@ -20,13 +20,11 @@ fun main()
         configureInstalls()
         // configuration for security in Security.kt
         configureSecurity()
-        // configuration fro database in Database.kt
+        // configuration for database in Database.kt
         configurationDB()
 
         // ROUTES:
-        homeRoutes()         //Home.kt -> home.ftl
-        aboutusRoutes()      //AboutUs.kt -> aboutUs.ftl
-        contactusRoutes()    //ContactUs.kt -> contactUs.ftl
+        setupRoutes();
 
     }.start(wait = true)
 
