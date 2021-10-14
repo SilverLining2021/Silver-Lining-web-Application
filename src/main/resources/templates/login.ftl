@@ -7,13 +7,12 @@
 <body>
 <h2>Login</h2>
 <p>Please login to use this application</p>
-<form name="auth-form" method="post" enctype="application/x-www-form-urlencoded" action="/login">
+<form name="auth-form" method="post" enctype="application/x-www-form-urlencoded">
     <label>Username:
         <input type="text" name="username" placeholder="myusername" /></label><br />
     <label>Password:
-        <input type="password" name="password" placeholder="hunter2" /><br />
-    </label>
-    <input type="submit" value="Login" />
+        <input type="password" name="password" placeholder="hunter2" /></label><br />
+    <input type="submit" value="Login" formaction="/login" />
 </form>
 </body>
 </html>
