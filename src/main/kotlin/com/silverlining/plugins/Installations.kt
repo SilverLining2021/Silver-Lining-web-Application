@@ -1,4 +1,5 @@
 package com.silverlining.plugins
+import com.silverlining.UserSession
 import freemarker.cache.ClassTemplateLoader
 import io.ktor.routing.*
 import io.ktor.application.*
@@ -9,7 +10,6 @@ import io.ktor.http.content.*
 import io.ktor.freemarker.*
 import io.ktor.response.*
 import io.ktor.sessions.*
-import io.ktor.gson.*
 
 
 fun Application.configureInstalls() {
@@ -40,6 +40,7 @@ fun Application.configureInstalls() {
             userParamName = "username"
             passwordParamName = "password"
             validate { credentials ->
+                // TODO: Query database instead
                 if (credentials.name == "myusername" && credentials.password == "hunter2") {
                     UserIdPrincipal(credentials.name)
                 } else {
