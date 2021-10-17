@@ -14,7 +14,7 @@ fun main()
     embeddedServer(Netty,
                    watchPaths = listOf("ktor-development"),
                    port = 8080,
-                   host = "0.0.0.0")
+                   host = "127.0.0.1")
     {
         // configuration for routing in Installations.kt
         configureInstalls()
@@ -27,6 +27,7 @@ fun main()
         homeRoutes()         //Home.kt -> home.ftl
         aboutusRoutes()      //AboutUs.kt -> aboutUs.ftl
         contactusRoutes()    //ContactUs.kt -> contactUs.ftl
+        mapRoutes()
 
     }.start(wait = true)
 
