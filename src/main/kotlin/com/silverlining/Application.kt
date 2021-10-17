@@ -23,11 +23,8 @@ fun main()
         // configuration for database in Database.kt
         //configurationDB()
 
-        // ROUTES:
-        homeRoutes()         //Home.kt -> home.ftl
-        aboutusRoutes()      //AboutUs.kt -> aboutUs.ftl
-        contactusRoutes()    //ContactUs.kt -> contactUs.ftl
-        mapRoutes()
+        // Setup routing
+        setupRoutes()
 
     }.start(wait = true)
 

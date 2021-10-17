@@ -15,4 +15,5 @@ fun Application.setupRoutes() {
     homeRoutes()         //Home.kt -> home.ftl
     aboutusRoutes()      //AboutUs.kt -> aboutUs.ftl
     contactusRoutes()    //ContactUs.kt -> contactUs.ftl
+    mapRoutes()          //Map.kt -> map.ftl
 }
