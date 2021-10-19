@@ -1,14 +1,14 @@
 package com.silverlining.routes
-import com.silverlining.User
-import com.silverlining.plugins.configureInstalls
-import freemarker.cache.ClassTemplateLoader
+import com.silverlining.repository.InMemoryLocationRepository
+import com.silverlining.repository.LocationRepository
 import io.ktor.application.*
 import io.ktor.freemarker.*
-import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
 
 fun Application.homeRoutes(){
+
+    val locationRepo: LocationRepository = InMemoryLocationRepository()
 
     routing {
         // Landing page routing - get url
@@ -16,11 +16,12 @@ fun Application.homeRoutes(){
             call.respond(FreeMarkerContent("home.ftl", null))
         }
 
-        // Landing page routing - post url
-        post("/"){
-            val user = call.receive<User>()
-            call.respond(user)
+        // TEST ROUTE
+        get("/location"){
+            // test call for the interphase
+            call.respond(locationRepo.getAllLocationData())
         }
+
     }
 
 }
