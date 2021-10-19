@@ -13,9 +13,7 @@ fun Application.homeRoutes(){
     routing {
         // Landing page routing - get url
         get("/"){
-            //call.respondText("Hello world!")
-            val sampleUser = User(1, "user", "password")
-            call.respond(FreeMarkerContent("home.ftl", mapOf("user" to sampleUser)))
+            call.respond(FreeMarkerContent("home.ftl", null))
         }
 
         // Landing page routing - post url

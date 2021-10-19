@@ -12,8 +12,7 @@ fun Application.aboutusRoutes(){
     routing {
         // About us page routing url
         get("/about-us"){
-            val sampleUser = User(1, "user", "password")
-            call.respond(FreeMarkerContent("aboutUs.ftl", mapOf("user" to sampleUser)))
+            call.respond(FreeMarkerContent("aboutUs.ftl", null))
         }
     }
 
