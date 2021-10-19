@@ -6,6 +6,9 @@
 </head>
 <body>
     <h3>Welcome to the Silver Lining Web Application</h3>
-    <a>Sports-weather app under development</a>
+
+    <div>
+        <a>Sports-weather app under development</a>
+    </div>
 </body>
 </html>

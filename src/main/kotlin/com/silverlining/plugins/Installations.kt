@@ -13,17 +13,16 @@ fun Application.configureInstalls() {
     // Installed packages
     install(ContentNegotiation){
         jackson()
-
     }
     install(FreeMarker){
         templateLoader = ClassTemplateLoader(this::class.java.classLoader, "templates")
     }
 
     routing {
-
         //Static files definition
         static("/static") {
-            resources("files")
+            resources("files/static/")
+
         }
     }
 
