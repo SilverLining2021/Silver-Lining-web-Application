@@ -21,7 +21,7 @@ fun main()
         // configuration for security in Security.kt
         configureSecurity()
         // configuration for database in Database.kt
-        //configurationDB()
+        configurationDB()
 
         // Setup routing
         setupRoutes()
