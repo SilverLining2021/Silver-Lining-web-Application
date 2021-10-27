@@ -56,8 +56,8 @@ remote branch. For remotely updating the code type the following commands:
     git add -A
     git commit -m 'message'
 ```
-For the push you cna use the integrated Intellij IDEA green arrow to push.
-In case you wna to update your code from the main branch please run the following commmand:
+For the push you can use the integrated Intellij IDEA green arrow to push.
+In case you want to update your code from the main branch please run the following commmand:
 ```
     git pull
 ```
