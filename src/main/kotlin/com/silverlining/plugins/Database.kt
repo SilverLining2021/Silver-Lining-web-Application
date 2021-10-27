@@ -1,25 +1,21 @@
 package com.silverlining.plugins
 
+import com.silverlining.ddl.Users
 import io.ktor.application.*
-import org.ktorm.database.Database
-import org.ktorm.support.sqlite.SQLiteDialect
+import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.SchemaUtils
+import org.jetbrains.exposed.sql.transactions.transaction
+
 
 fun Application.configurationDB(){
-
     // Database definition
-    // Using libraries from Ktorm:
-    // https://mvnrepository.com/artifact/org.ktorm/ktorm-core
+    val db_url = System.getProperty("user.dir") + "/data.db"
+    Database.connect(
+        "jdbc:sqlite:$db_url",
+        "org.sqlite.JDBC"
+    )
 
-    // Using libraries from MySQL Connector:
-    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
-
-//    val database = Database.connect(
-//        url = "jdbc:mysql://localhost:3306/Users",
-//        driver = "com.mysql.cj.jdbc.Driver",
-//        user = "root",
-//        password = "password"
-//    )
-
-    val database = Database.connect("jdbc:sqlite:sqlite3.db")
-
+    transaction {
+        SchemaUtils.create(Users)
+    }
 }

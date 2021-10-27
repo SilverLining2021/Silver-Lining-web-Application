@@ -1,6 +1,7 @@
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
+val exposed_version: String by project
 
 plugins {
     application
@@ -27,15 +28,20 @@ dependencies{
     implementation("io.ktor:ktor-jackson:$ktor_version")
     implementation("io.ktor:ktor-gson:$ktor_version")
 
-
-    // https://mvnrepository.com/artifact/org.ktorm/ktorm-core
-    implementation("org.ktorm:ktorm-core:3.4.1")
-
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation("mysql:mysql-connector-java:8.0.26")
     implementation("org.ktorm:ktorm-support-sqlite:3.4.1")
     implementation("org.xerial:sqlite-jdbc:3.34.0")
 
+
+    // ORM for Kotlin
+    // https://github.com/JetBrains/Exposed
+    implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
+    implementation("org.jetbrains.exposed:exposed-dao:$exposed_version")
+    implementation("org.jetbrains.exposed:exposed-jdbc:$exposed_version")
+    // SQLite driver
+    // https://github.com/xerial/sqlite-jdbc
+    implementation("org.xerial:sqlite-jdbc:3.36.0.3")
 
     testImplementation("io.ktor:ktor-server-tests:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")
@@ -50,6 +56,5 @@ dependencies{
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
     implementation("io.ktor:ktor-client-core:$ktor_version")
     implementation("io.ktor:ktor-client-cio:$ktor_version")
-
 
 }
