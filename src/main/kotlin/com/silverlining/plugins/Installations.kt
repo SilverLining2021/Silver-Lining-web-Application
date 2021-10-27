@@ -16,7 +16,7 @@ fun Application.configureInstalls() {
 
     // Installed packages
     install(ContentNegotiation){
-        gson(){
+        gson {
             setPrettyPrinting()
         }
     }
