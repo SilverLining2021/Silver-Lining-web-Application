@@ -44,6 +44,9 @@ dependencies{
     // https://ktor.io/docs/css-dsl.html#use_css
     implementation ("io.ktor:ktor-html-builder:$ktor_version")
 
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation("io.ktor:ktor-client-core:$ktor_version")
+    implementation("io.ktor:ktor-client-cio:$ktor_version")
 
 
 }

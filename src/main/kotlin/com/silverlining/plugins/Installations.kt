@@ -16,7 +16,7 @@ fun Application.configureInstalls() {
     // https://ktor.io/docs/gson.html#register_gson_converter
 
     install(ContentNegotiation){
-        gson(){
+        gson {
             setPrettyPrinting()
         }
     }
