@@ -44,11 +44,11 @@ localized and relevant weather information. We will store user-relevant and freq
 database such as Postgresql or MongoDB. For weather data we will query public APIs such as the OpenWeatherMap API or
 NOAA’s Web Service API. For maps we will use permissively-licensed data from OpenStreetMap.
 
-### Running and cloning the code
+### Editing the code
 The code is based on a Github CI/CD structure for managing versions and also to collaborate.
 To run the code type the following commands in the terminal:
 ```
-    git clonehttps://github.com/SilverLining2021/Silver-Lining-web-Application.git
+    git clone https://github.com/SilverLining2021/Silver-Lining-web-Application.git
 ```
 Once you have the repository cloned into your local machine you will be able to pull and push changes from the
 remote branch. For remotely updating the code type the following commands:
@@ -61,3 +61,11 @@ In case you wna to update your code from the main branch please run the followin
 ```
     git pull
 ```
+
+### Running the Code
+Assuming you have the code built, in your project directory do:
+```
+./gradlew run
+``
+
+Note that you will now have a local SQLite database created at `data.db` if one does not already exist.
