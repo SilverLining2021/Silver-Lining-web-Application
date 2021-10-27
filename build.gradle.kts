@@ -28,10 +28,6 @@ dependencies{
     implementation("io.ktor:ktor-jackson:$ktor_version")
     implementation("io.ktor:ktor-gson:$ktor_version")
 
-
-    // https://mvnrepository.com/artifact/org.ktorm/ktorm-core
-    implementation("org.ktorm:ktorm-core:3.4.1")
-
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation("mysql:mysql-connector-java:8.0.26")
 
