@@ -19,6 +19,8 @@ fun Application.loginRoutes() {
 
                 // TODO: Populate this instead of using a stub
                 val username = call.principal<UserIdPrincipal>()?.name.toString()
+
+                // TODO: Query uid, username, & preferences from database
                 call.sessions.set(UserSession(uid = 1, name = username, count = 1))
 
                 call.respondRedirect("/")

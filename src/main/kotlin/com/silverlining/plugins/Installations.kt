@@ -3,17 +3,14 @@ import com.silverlining.UserSession
 import freemarker.cache.ClassTemplateLoader
 import io.ktor.routing.*
 import io.ktor.application.*
-import io.ktor.auth.*
 import io.ktor.features.*
-import io.ktor.jackson.*
 import io.ktor.http.content.*
 import io.ktor.freemarker.*
-import io.ktor.response.*
+import io.ktor.gson.*
 import io.ktor.sessions.*
 
 
 fun Application.configureInstalls() {
-
     // Installed packages
     install(ContentNegotiation){
         gson {
@@ -23,50 +20,23 @@ fun Application.configureInstalls() {
 
     // Free marker from Apache
     // https://ktor.io/docs/freemarker.html
-
     install(FreeMarker){
         templateLoader = ClassTemplateLoader(this::class.java.classLoader, "templates")
     }
 
+    val MONTH = 86400L * 30L
     install(Sessions) {
         cookie<UserSession>("user_session") {
             cookie.path = "/"
-            cookie.maxAgeInSeconds = 86400 * 30
-        }
-    }
-
-    install(Authentication) {
-        form("auth-form") {
-            userParamName = "username"
-            passwordParamName = "password"
-            validate { credentials ->
-                // TODO: Query database instead
-                if (credentials.name == "myusername" && credentials.password == "hunter2") {
-                    UserIdPrincipal(credentials.name)
-                } else {
-                    // failure to authenticate
-                    null
-                }
-
-            }
-        }
-        session<UserSession> {
-            validate {
-                session -> session /* TODO: Unstub this */
-            }
-            challenge {
-                call.respondRedirect("/login")
-            }
+            cookie.maxAgeInSeconds = MONTH
         }
     }
 
     // This feature writes the logs to the server
     // io.ktor.features
-
     install(CallLogging)
 
     /*** Static resources routing ***/
-
     routing {
 
         //Static files definition
