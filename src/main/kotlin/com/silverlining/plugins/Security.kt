@@ -3,12 +3,10 @@ package com.silverlining.plugins
 
 import com.silverlining.UserSession
 import com.silverlining.ddl.Users
+import de.rtner.security.auth.spi.SimplePBKDF2
 import io.ktor.application.*
 import io.ktor.auth.*
 import io.ktor.response.*
-import org.jetbrains.exposed.sql.Query
-import org.jetbrains.exposed.sql.SqlExpressionBuilder
-import org.jetbrains.exposed.sql.Transaction
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 
@@ -32,17 +30,17 @@ fun Application.configureSecurity() {
                         val user = matching.elementAt(0)
                         println("matched user: ${user[Users.username]}")
 
-                        val uid = user[Users.id]
-
-                        // TODO: Hash w/ PBKDF2
-                        val inputHashed = credentials.password
+                        val input = credentials.password
                         val truth = user[Users.phash]
 
-                        if (inputHashed == truth) {
+                        if (SimplePBKDF2().verifyKeyFormatted(truth, input)) {
                             // TODO: Also set UID and whatnot
+                            println("successfully logged in with valid PBKDF2 hash")
                             output = UserIdPrincipal(credentials.name)
                         } else {
                             // failure to authenticate
+                            println("Failed to authenticate user")
+                            null
                         }
                     }
                 }

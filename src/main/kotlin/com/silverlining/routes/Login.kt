@@ -15,9 +15,7 @@ fun Application.loginRoutes() {
 
         authenticate("auth-form") {
             post("/login") {
-                log.debug("Received login information")
-
-                // TODO: Populate this instead of using a stub
+                log.debug("User attempted login")
                 val username = call.principal<UserIdPrincipal>()?.name.toString()
 
                 // TODO: Query uid, username, & preferences from database

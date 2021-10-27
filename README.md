@@ -66,6 +66,8 @@ In case you wna to update your code from the main branch please run the followin
 Assuming you have the code built, in your project directory do:
 ```
 ./gradlew run
-``
+```
 
 Note that you will now have a local SQLite database created at `data.db` if one does not already exist.
+
+Note that the default `username:password` pair for the main user is `test:hunter2`
