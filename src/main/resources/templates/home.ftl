@@ -12,7 +12,7 @@
         <#if user?? && user?has_content>
             <p>Hello, ${user.name}!</p>
         <#else>
-            <p>You are currenetly not logged in. Please <a href="/login">log in</a></p>
+            <p>You are currently not logged in. Please <a href="/login">log in</a></p>
         </#if>
     </div>
 </body>
