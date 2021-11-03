@@ -1,11 +1,14 @@
 package com.silverlining.routes
 import com.silverlining.UserSession
+import com.silverlining.plugins.DB.db
 import io.ktor.application.*
 import io.ktor.auth.*
 import io.ktor.freemarker.*
 import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.sessions.*
+import org.jetbrains.exposed.sql.Query
+import org.jetbrains.exposed.sql.select
 
 fun Application.loginRoutes() {
     routing {
@@ -15,11 +18,11 @@ fun Application.loginRoutes() {
 
         authenticate("auth-form") {
             post("/login") {
-                log.debug("User attempted login")
-                val username = call.principal<UserIdPrincipal>()?.name.toString()
-
-                // TODO: Query uid, username, & preferences from database
-                call.sessions.set(UserSession(uid = 1, name = username, count = 1))
+                val identity = call.principal<UserSession>();
+                if (identity != null) {
+                    log.debug("User ${identity?.name} logging in...")
+                    call.sessions.set(UserSession(identity?.uid, name=identity?.name))
+                }
 
                 call.respondRedirect("/")
             }

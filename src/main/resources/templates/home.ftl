@@ -8,7 +8,12 @@
     <h3>Welcome to the Silver Lining Web Application</h3>
 
     <div>
-        <a>Sports-weather app under development</a>
+        <p>Sports-weather app under development</p>
+        <#if user?? && user?has_content>
+            <p>Hello, ${user.name}!</p>
+        <#else>
+            <p>You are currenetly not logged in. Please <a href="/login">log in</a></p>
+        </#if>
     </div>
 </body>
 </html>

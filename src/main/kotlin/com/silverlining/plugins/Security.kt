@@ -20,27 +20,28 @@ fun Application.configureSecurity() {
             validate { credentials ->
                 var output: Principal? = null;
 
-                transaction(DB.db) {
+                transaction (DB.db) {
                     val matching = Users.select{Users.username eq credentials.name}
 
                     if (matching.count() < 1) {
                         println ("no matching user found")
-                        null
+                        output  = null
                     } else {
                         val user = matching.elementAt(0)
                         println("matched user: ${user[Users.username]}")
 
                         val input = credentials.password
                         val truth = user[Users.phash]
+                        val uid = user[Users.id]
 
                         if (SimplePBKDF2().verifyKeyFormatted(truth, input)) {
                             // TODO: Also set UID and whatnot
                             println("successfully logged in with valid PBKDF2 hash")
-                            output = UserIdPrincipal(credentials.name)
+                            output = UserSession(uid, credentials.name)
                         } else {
                             // failure to authenticate
                             println("Failed to authenticate user")
-                            null
+                            output = null
                         }
                     }
                 }

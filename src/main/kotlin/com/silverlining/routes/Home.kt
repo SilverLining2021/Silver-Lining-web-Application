@@ -1,11 +1,14 @@
 package com.silverlining.routes
+import com.silverlining.UserSession
 import com.silverlining.api.getWeatherData
 import com.silverlining.repository.InMemoryLocationRepository
 import com.silverlining.repository.LocationRepository
 import io.ktor.application.*
+import io.ktor.auth.*
 import io.ktor.freemarker.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import io.ktor.sessions.*
 
 
 fun Application.homeRoutes(){
@@ -15,7 +18,8 @@ fun Application.homeRoutes(){
     routing {
         // Landing page routing - get url
         get("/"){
-            call.respond(FreeMarkerContent("home.ftl", null))
+            val session = call.sessions.get<UserSession>()
+            call.respond(FreeMarkerContent("home.ftl", mapOf("user" to session)))
         }
 
         // TEST ROUTE
