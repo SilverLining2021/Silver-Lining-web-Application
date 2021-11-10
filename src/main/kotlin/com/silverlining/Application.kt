@@ -5,10 +5,6 @@ import com.silverlining.plugins.*
 import com.silverlining.routes.*
 
 
-// Data structure to hold users
-data class User(val id: Int? = null, val name: String, val password: String)
-
-
 fun main()
 {
     embeddedServer(Netty,

@@ -1,11 +1,12 @@
 package com.silverlining.api
 
+import com.google.gson.Gson
+import com.silverlining.entities.WeatherData
 import okhttp3.*
 import java.io.IOException
 
 fun getWeatherData() {
-    val url =
-        "https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=imperial&mode=json"
+    val url = "https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=imperial&mode=json"
     val request = Request.Builder()
         .url(url)
         .get()
@@ -26,10 +27,11 @@ fun getWeatherData() {
 
             // TODO("Finish the data transmission to the data class WeatherData.kt")
 
-            //val gson = GsonBuilder().create()
-            //val weatherJson = gson.fromJson(body, WeatherData.kt::class.java)
-
-
+            //val gson = Gson()
+            //val weatherJson = gson.fromJson(body, WeatherData::class.java)
+            //println(weatherJson)
         }
+
     })
+
 }
