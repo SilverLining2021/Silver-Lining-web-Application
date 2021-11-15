@@ -1,11 +1,10 @@
 package com.silverlining.repository
 
-import com.silverlining.api.getWeatherData
-import com.silverlining.entities.WeatherData
+import com.silverlining.entities.weatherDataClass
 
 class InMemoryWeatherRepository: WeatherRepository {
 
-    override fun getAllWeatherData(): List<WeatherData> {
+    override fun getAllWeatherData(): List<weatherDataClass> {
         TODO("not yet implemented")
     }
 }

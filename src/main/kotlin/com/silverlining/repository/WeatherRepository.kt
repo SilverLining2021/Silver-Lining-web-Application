@@ -1,10 +1,9 @@
 package com.silverlining.repository
 
-import com.silverlining.api.getWeatherData
-import com.silverlining.entities.WeatherData
+import com.silverlining.entities.weatherDataClass
 
 interface WeatherRepository {
 
-    fun getAllWeatherData(): List<WeatherData>
+    fun getAllWeatherData(): List<weatherDataClass>
 
 }
