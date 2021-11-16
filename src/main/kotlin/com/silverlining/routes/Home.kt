@@ -1,8 +1,10 @@
 package com.silverlining.routes
 import com.silverlining.UserSession
-import com.silverlining.api.getWeatherData
+import com.silverlining.api.*
 import com.silverlining.repository.InMemoryLocationRepository
+import com.silverlining.repository.InMemoryWeatherRepository
 import com.silverlining.repository.LocationRepository
+import com.silverlining.repository.WeatherRepository
 import io.ktor.application.*
 import io.ktor.auth.*
 import io.ktor.freemarker.*
@@ -14,6 +16,7 @@ import io.ktor.sessions.*
 fun Application.homeRoutes(){
 
     val locationRepo: LocationRepository = InMemoryLocationRepository()
+    val weatherRepo: WeatherRepository = InMemoryWeatherRepository()
 
     routing {
         // Landing page routing - get url
@@ -33,9 +36,11 @@ fun Application.homeRoutes(){
         // Weather API ROUTE
         get("/weather"){
             // test call for the function
-            call.respond(getWeatherData())
+            //call.respond(getWeatherData())
+            call.respond(weatherRepo.getAllWeatherData())
 
         }
+
 
     }
 }

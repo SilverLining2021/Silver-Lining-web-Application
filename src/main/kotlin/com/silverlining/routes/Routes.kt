@@ -1,5 +1,4 @@
 package com.silverlining.routes
-import com.silverlining.User
 import com.silverlining.plugins.configureInstalls
 import freemarker.cache.ClassTemplateLoader
 import io.ktor.application.*
