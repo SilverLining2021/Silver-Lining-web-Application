@@ -3,7 +3,17 @@ package com.silverlining.api
 import okhttp3.*
 import java.io.IOException
 
-var coord: String = """{"coord":{"lon":-0.1257,"lat":51.5085},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":52,"feels_like":50.52,"temp_min":50.18,"temp_max":53.35,"pressure":1021,"humidity":77},"visibility":10000,"wind":{"speed":5.75,"deg":230},"clouds":{"all":90},"dt":1637076065,"sys":{"type":2,"id":2019646,"country":"GB","sunrise":1637047231,"sunset":1637079020},"timezone":0,"id":2643743,"name":"London","cod":200}"""
+var coord: String = """{"coord":{"lon":-0.1257,"lat":51.5085},"weather":[{"id":804,"main":"Clouds","description":
+    |"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":52,"feels_like":50.52,"temp_min":50.18,
+    |"temp_max":53.35,"pressure":1021,"humidity":77},"visibility":10000,"wind":{"speed":5.75,"deg":230},"clouds":
+    |{"all":90},"dt":1637076065,"sys":{"type":2,"id":2019646,"country":"GB","sunrise":1637047231,"sunset":1637079020},
+    |"timezone":0,"id":2643743,"name":"London","cod":200}""".trimMargin()
+
+var coordParam = """{"coord":{"lon":-0.1257,"lat":51.5085},"weather":[{"id":804,"main":"Clouds","description":
+    |"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":52,"feels_like":50.52,"temp_min":50.18,
+    |"temp_max":53.35,"pressure":1021,"humidity":77},"visibility":10000,"wind":{"speed":5.75,"deg":230},"clouds"
+    |:{"all":90},"dt":1637076065,"sys":{"type":2,"id":2019646,"country":"GB","sunrise":1637047231,"sunset":1637079020}
+    |,"timezone":0,"id":2643743,"name":"London","cod":200}""".trimMargin()
 
 fun computeWeatherData() {
     val url = "https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&id=2172797&lang=null&units=imperial&mode=json"
@@ -45,7 +55,7 @@ fun returnWeather(): String {
 
 fun computeWeatherDataParam(latitude: Double, longitude: Double){
 
-    val url = "https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=$latitude&lon=$longitude&id=2172797&lang=null&units=imperial&mode=json"
+    val url = "https://community-open-weather-map.p.rapidapi.com/weather?lat=$latitude&lon=$longitude&mode=json"
     val requestParam = Request.Builder()
         .url(url)
         .get()
@@ -65,7 +75,7 @@ fun computeWeatherDataParam(latitude: Double, longitude: Double){
             println(body)
 
             if (body != null) {
-                coord = body
+                coordParam = body
             }
 
             // println("global json: $coord")
@@ -77,5 +87,5 @@ fun computeWeatherDataParam(latitude: Double, longitude: Double){
 
 fun returnWeatherParam(latitude: Double, longitude: Double): String {
     computeWeatherDataParam(latitude, longitude)
-    return coord
+    return coordParam
 }

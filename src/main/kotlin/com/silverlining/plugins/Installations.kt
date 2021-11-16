@@ -41,8 +41,7 @@ fun Application.configureInstalls() {
 
         //Static files definition
         static("/static") {
-            resources("files/static/")
-
+            resources("files")
         }
     }
 
