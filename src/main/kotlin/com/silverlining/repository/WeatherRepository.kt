@@ -6,4 +6,6 @@ interface WeatherRepository {
 
     fun getAllWeatherData(): List<weatherDataClass>
 
+    fun getAllWeatherData(latitude: Double, longitude: Double): List<weatherDataClass>
+
 }
