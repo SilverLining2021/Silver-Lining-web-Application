@@ -35,8 +35,6 @@ fun Application.homeRoutes(){
             // test call for the function
             call.respond(getWeatherData())
 
-            // TODO("build the weather api calls")
-
         }
 
     }

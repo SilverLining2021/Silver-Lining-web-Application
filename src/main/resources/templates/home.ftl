@@ -9,6 +9,14 @@
 
     <div>
         <p>Sports-weather app under development</p>
+
+
+        <li><a href="/">Home</a> </li>
+        <li><a href="map">Map</a> </li>
+        <li><a href="contact-us">Contact Us</a> </li>
+        <li><a href="about-us">About Us</a> </li>
+
+        <!-- User-login specific content -->
         <#if user?? && user?has_content>
             <p>Hello, ${user.name}!</p>
         <#else>

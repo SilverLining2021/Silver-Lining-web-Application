@@ -17,12 +17,10 @@ class InMemoryLocationRepository: LocationRepository {
         return(location)
     }
 
-
     // Function to get the geolocation from the Maps API
     override fun getGeoLocation(latitude: Double, longitude: Double): Location? {
         TODO("Not yet implemented")
     }
-
 
     // Function to post the geolocation data into the Weather API
     override fun postGeoLocation(latitude: Double, longitude: Double) {
