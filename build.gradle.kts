@@ -30,9 +30,6 @@ dependencies{
 
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation("mysql:mysql-connector-java:8.0.26")
-    implementation("org.ktorm:ktorm-support-sqlite:3.4.1")
-    implementation("org.xerial:sqlite-jdbc:3.34.0")
-
 
     // ORM for Kotlin
     // https://github.com/JetBrains/Exposed

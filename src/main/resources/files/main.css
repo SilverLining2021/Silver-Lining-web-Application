@@ -1,0 +1,23 @@
+.bg-primary-x {
+    --bs-bg-opacity: 1;
+    background-color: #f7f7f7 !important;
+}
+
+.masthead .masthead-heading {
+    font-size: 2.75rem;
+    line-height: 2.75rem;
+    color: #1f84a2;
+}
+
+.divider-custom.divider-light .divider-custom-icon {
+    color: #1f84a2;
+}
+.divider-custom.divider-light .divider-custom-line {
+    background-color: #1f84a2;
+}
+
+.masthead .masthead-subheading {
+    font-size: 1.25rem;
+    color: #1a2530;
+}
+

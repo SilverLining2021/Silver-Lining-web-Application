@@ -16,10 +16,5 @@
         <li><a href="about-us">About Us</a> </li>
 
     </div>
-
-    <h3><a href ="/about-us">About Us</a></h3>
-    <h3><a href ="/contact-us">Contact Us</a></h3>
-    <h3><a href ="/map">Map</a></h3>
-
 </body>
 </html>
