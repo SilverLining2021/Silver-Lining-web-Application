@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Silver Lining - About Us</title>
+    <title>Silver Lining - Contact Us</title>
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
         * {box-sizing: border-box;}
