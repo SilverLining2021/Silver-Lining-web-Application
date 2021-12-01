@@ -4,9 +4,13 @@ import com.silverlining.entities.Location
 
 interface LocationRepository {
 
-    fun getAllLocationData(): List<Location>
+    fun getAllLocationData(): Location
 
-    fun getGeoLocation(latitude: Double, longitude: Double): Location?
+    fun initGeoLocation(latitude: Double, longitude: Double): Location
+
+    fun getLongitude(): Double
+
+    fun getLatitude(): Double
 
     fun postGeoLocation(latitude: Double, longitude: Double)
 

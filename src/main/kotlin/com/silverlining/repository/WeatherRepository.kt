@@ -4,8 +4,6 @@ import com.silverlining.entities.weatherDataClass
 
 interface WeatherRepository {
 
-    fun getAllWeatherData(): List<weatherDataClass>
-
-    fun getAllWeatherData(latitude: Double, longitude: Double): List<weatherDataClass>
+    fun getAllWeatherDataParam(latitude: Double, longitude: Double): weatherDataClass
 
 }
