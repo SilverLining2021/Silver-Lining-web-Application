@@ -4,22 +4,26 @@ import com.silverlining.entities.Location
 
 class InMemoryLocationRepository: LocationRepository {
 
-    private val location = listOf(
-        Location("1600 Amphitheatre Parkway, Mountain View, CA 94043, USA",
-            -122.0842499,
-            37.4224764,
-            "ROOFTOP",
-            "ChIJ2eUgeAK6j4ARbn5u_wAGqWA")
-    )
+    private var location = Location(-122.0842499, 37.4224764)
 
     // Function to get the location data from the data structure.
-    override fun getAllLocationData(): List<Location> {
+    override fun getAllLocationData(): Location {
         return(location)
     }
 
     // Function to get the geolocation from the Maps API
-    override fun getGeoLocation(latitude: Double, longitude: Double): Location? {
-        TODO("Not yet implemented")
+    override fun initGeoLocation(latitude: Double, longitude: Double): Location {
+        location = Location(latitude, longitude)
+        return(location)
+    }
+
+    override fun getLongitude(): Double {
+        return location.longitude
+    }
+
+
+    override fun getLatitude(): Double {
+        return location.latitude
     }
 
     // Function to post the geolocation data into the Weather API

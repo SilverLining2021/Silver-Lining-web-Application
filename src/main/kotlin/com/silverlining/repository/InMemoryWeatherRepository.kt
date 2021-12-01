@@ -6,20 +6,11 @@ import com.silverlining.api.*
 
 class InMemoryWeatherRepository: WeatherRepository {
 
-    override fun getAllWeatherData(): List<weatherDataClass> {
-        val coordinates: String = returnWeather()
+    override fun getAllWeatherDataParam(latitude: Double, longitude: Double): weatherDataClass {
+        val coordinates: String = returnWeather(latitude,longitude)
         val gson = GsonBuilder().create()
         val weatherJson = gson.fromJson(coordinates, weatherDataClass::class.java)
-        val weather = listOf(weatherJson)
-        return(weather)
-    }
-
-    override fun getAllWeatherData(latitude: Double, longitude: Double): List<weatherDataClass> {
-        val coordinates: String = returnWeatherParam(latitude,longitude)
-        val gson = GsonBuilder().create()
-        val weatherJson = gson.fromJson(coordinates, weatherDataClass::class.java)
-        val weather = listOf(weatherJson)
-        return (weather)
+        return (weatherJson)
     }
 
 }

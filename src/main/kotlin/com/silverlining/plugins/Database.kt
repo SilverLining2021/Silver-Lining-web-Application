@@ -16,6 +16,7 @@ import org.jetbrains.exposed.sql.vendors.currentDialect
  *        // your code here
  *     }
  */
+
 object DB {
     val db_url = System.getProperty("user.dir") + "/data.db"
     val db by lazy {

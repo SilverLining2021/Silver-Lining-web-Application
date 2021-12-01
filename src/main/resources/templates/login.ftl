@@ -6,6 +6,7 @@
 </head>
 <body>
 <h2>Login</h2>
+<li><a href="/">Home</a> </li>
 <p>Please login to use this application</p>
 <form name="auth-form" method="post" enctype="application/x-www-form-urlencoded">
     <label>Username:
