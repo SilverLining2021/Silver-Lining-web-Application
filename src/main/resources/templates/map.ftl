@@ -19,13 +19,14 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="/">map</a>
+        <a class="navbar-brand" href="/map">Map</a>
         <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/">Home</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/map">Map</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/about-us">About us</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/contact-us">Contact us</a></li>
@@ -40,11 +41,8 @@
     </div>
 </nav>
 
-
-
 <!-- Masthead-->
 <header class="masthead bg-primary-x text-white text-center">
-
 
     <style>
         #map{
@@ -56,24 +54,35 @@
 
     <script>
         // function for setting map with markers
-        function initMap(){
+        function initMap(listener){
 
             //  get user location
             const successCallback = (position) => {
                 //console.log(position);
                 //let coord = position.coords
                 //console.log(coord);
-                //const latitude  = position.coords.latitude;   // if latitude are needed to store
-                //const longitude = position.coords.longitude;  // if longitude are needed to store
+                const lat  = position.coords.latitude;   // if latitude are needed to store
+                const lng = position.coords.longitude;  // if longitude are needed to store
+                const latlng = {lat, lng}
+                //console.log(latlng)
                 //console.log(position.coords.latitude,position.coords.longitude);
+
+                const request = new Request('/map', {
+                    method: 'GET',
+                });
+
+                fetch(request).then(function(data) {
+                    console.log(data) // populate weather from user location data
+                });
 
                 // if needed replace "lat:position.coords.latitude,lng:position.coords.longitude" to "lat:latitude,lng:longitude" if variables enabled
                 addMarker({coords:{lat:position.coords.latitude,lng:position.coords.longitude},
                     iconImage:null,
-                    content: '<h1>Your location</h1>'})    // User/device location added to markers
+                    content: '<h1 style="color: #1a2530">Your location</h1>'})    // User/device location added to markers
             }
             const errorCallback = (error) => {
                 console.log(error);
+                window.alert("Sorry, your browser does not support this feature... Please Update your Browser or enable location to enjoy it");
             }
             // watchPosition as it updates in chang of devise location, while getCurrentPosition does not
             navigator.geolocation.watchPosition(successCallback, errorCallback);
@@ -99,12 +108,12 @@
                 {
                     coords:{lat:30.1895,lng:-85.7232},
                     iconImage:null,
-                    content: '<h1>Florida State University Panama City</h1>'
+                    content: '<h1 style="color: #1a2530">Florida State University Panama City</h1>'
                 },
                 {
                     coords:{lat:30.1853,lng:-85.7288},
                     iconImage:null,
-                    content: '<h1>Gulf Coast State College</h1>'
+                    content: '<h1 style="color: #1a2530">Gulf Coast State College</h1>'
                 },
             ];
             // loop through markers
@@ -129,8 +138,8 @@
                     var infoWindow = new google.maps.InfoWindow({
                         content:props.content
                     });
-                    marker.addListener('click',function (){
-                        infoWindow.open(map,marker);
+                    marker.addListener('click', function () {
+                        infoWindow.open(map, marker);
                     });
                 }
             }

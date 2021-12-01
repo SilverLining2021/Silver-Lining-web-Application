@@ -53,7 +53,7 @@ fun returnWeather(): String {
 }
 
 
-fun computeWeatherDataParam(latitude: Double, longitude: Double){
+public fun computeWeatherDataParam(latitude: Double, longitude: Double){
 
     val url = "https://community-open-weather-map.p.rapidapi.com/weather?lat=$latitude&lon=$longitude&mode=json"
     val requestParam = Request.Builder()
