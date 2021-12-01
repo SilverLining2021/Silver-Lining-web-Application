@@ -1,0 +1,11 @@
+
+# IDE-related
+build
+.idea
+.gradle
+
+# Platform-specific ignores
+.DS_Store
+
+# Sqlite3 database
+data.db
