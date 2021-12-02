@@ -165,10 +165,10 @@
             </tr>
             <tr>
                 <#--        // values need to be set base location and weather-->
-                <td>${data.main.temp} degrees</td>
-                <td>${data.main.humidity}</td>
-                <td>${data.wind.speed} knots</td>
-                <td>${data.main.pressure}</td>
+                <td>${data.weatherData.main.temp} degrees kelvin </td>
+                <td>${data.weatherData.main.humidity}</td>
+                <td>${data.weatherData.wind.speed} knots</td>
+                <td>${data.weatherData.main.pressure}</td>
             </tr>
         </table>
     </div>
