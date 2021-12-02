@@ -27,11 +27,10 @@ fun Application.homeRoutes(){
 
 
         get("/coords"){
+
             call.respond(weatherRepo.getAllWeatherDataParam(8.983333, -79.516670))
 
         }
-
-
 
     }
 }
