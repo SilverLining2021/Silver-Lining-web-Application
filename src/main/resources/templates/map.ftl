@@ -67,7 +67,7 @@
                 //console.log(latlng)
                 //console.log(position.coords.latitude,position.coords.longitude);
 
-                const request = new Request('/map', {
+                const request = new Request(`/map?lat=` + lat + `&lng=` + lng, {
                     method: 'GET',
                 });
 
@@ -159,16 +159,16 @@
             <tr>
                 <#--        // info we wish to display-->
                 <td>temperature</td>
-                <td>Weather</td>
+                <td>Humidity</td>
                 <td>Wind</td>
-                <td>UV Index</td>
+                <td>Pressure</td>
             </tr>
             <tr>
                 <#--        // values need to be set base location and weather-->
-                <td>100</td>
-                <td>windy</td>
-                <td>80</td>
-                <td>16</td>
+                <td>${data.main.temp} degrees</td>
+                <td>${data.main.humidity}</td>
+                <td>${data.wind.speed} knots</td>
+                <td>${data.main.pressure}</td>
             </tr>
         </table>
     </div>
