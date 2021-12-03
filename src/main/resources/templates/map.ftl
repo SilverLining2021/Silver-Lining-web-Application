@@ -161,13 +161,17 @@
                 <td>Temperature</td>
                 <td>Humidity</td>
                 <td>Wind</td>
+                <td>Recommended Sports</td>
             </tr>
             <tr>
                 <#--        // values need to be set base location and weather-->
                 <td>${data.weatherData.main.temp} degrees kelvin </td>
                 <td>${data.weatherData.main.humidity}</td>
                 <td>${data.weatherData.wind.speed} knots</td>
-                <td>${data.sportsData}</td>
+                <td>${data.sportsData.sport1}</td>
+                <td>${data.sportsData.sport2}</td>
+                <td>${data.sportsData.sport3} </td>
+                <td>${data.sportsData.sport4} </td>
             </tr>
         </table>
     </div>

@@ -15,7 +15,7 @@ fun Application.mapRoutes(){
     val locationRepo: LocationRepository = InMemoryLocationRepository()
 
     //testing --
-    val sportsRepo: SportsRepository = InMemorySportsRepository()
+    //val sportsRepo: SportsRepository = InMemorySportsRepository()
 
     var lat: Double = 0.0
     var lng: Double = 0.0
@@ -46,9 +46,7 @@ fun Application.mapRoutes(){
 
                 // val locationData =  locationRepo.initGeoLocation(latitude!!.toDouble(), longitude!!.toDouble())
                 // val weatherData = weatherRepo.getAllWeatherDataParam(locationData.latitude, locationData.longitude)
-
                 // call.respond(FreeMarkerContent("map.ftl", mapOf("data" to weatherData)))
-
                 return@get
             }
 
@@ -59,11 +57,9 @@ fun Application.mapRoutes(){
             val sportsData = computeSportsData(weatherData)
             val globalData = globalData(weatherData, sportsData)
 
-
             //else{
             //  val weatherData = weatherRepo.getAllWeatherDataParam(8.983333, -79.516670)
             call.respond(FreeMarkerContent("map.ftl", mapOf("data" to globalData)))
-
         }
     }
 }
