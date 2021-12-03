@@ -158,17 +158,16 @@
         <table style="width:100%">
             <tr>
                 <#--        // info we wish to display-->
-                <td>temperature</td>
+                <td>Temperature</td>
                 <td>Humidity</td>
                 <td>Wind</td>
-                <td>Pressure</td>
             </tr>
             <tr>
                 <#--        // values need to be set base location and weather-->
                 <td>${data.weatherData.main.temp} degrees kelvin </td>
                 <td>${data.weatherData.main.humidity}</td>
                 <td>${data.weatherData.wind.speed} knots</td>
-                <td>${data.weatherData.main.pressure}</td>
+                <td>${data.sportsData}</td>
             </tr>
         </table>
     </div>

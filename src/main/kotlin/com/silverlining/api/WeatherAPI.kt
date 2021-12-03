@@ -35,11 +35,8 @@ fun computeWeatherDataParam(latitude: Double, longitude: Double){
             if (body != null) {
                 coord = body
             }
-
             //println("global json: $coord")
-
         }
-
     })
 }
 

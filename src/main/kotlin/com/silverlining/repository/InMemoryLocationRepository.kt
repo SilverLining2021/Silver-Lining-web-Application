@@ -21,7 +21,6 @@ class InMemoryLocationRepository: LocationRepository {
         return location.longitude
     }
 
-
     override fun getLatitude(): Double {
         return location.latitude
     }

@@ -13,11 +13,14 @@ fun Application.mapRoutes(){
 
     val weatherRepo: WeatherRepository = InMemoryWeatherRepository()
     val locationRepo: LocationRepository = InMemoryLocationRepository()
+
+    //testing --
+    val sportsRepo: SportsRepository = InMemorySportsRepository()
+
     var lat: Double = 0.0
     var lng: Double = 0.0
 
     routing {
-
 
         // About us page routing url
         get("/map") {
