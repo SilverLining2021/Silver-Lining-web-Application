@@ -158,21 +158,48 @@
         <table style="width:100%">
             <tr>
                 <#--        // info we wish to display-->
-                <td>Temperature</td>
-                <td>Humidity</td>
-                <td>Wind</td>
-                <td>Recommended Indoor Sports</td>
-                <td>Recommended Outdoor Sports</td>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Wind</th>
+                <th>Recommended Indoor Sports</th>
+                <th>Recommended Outdoor Sports</th>
             </tr>
             <tr>
-                <#--        // values need to be set base location and weather-->
-                <td>${data.weatherData.main.temp} degrees kelvin </td>
+                <td>${data.weatherData.main.temp} degrees kelvin</td>
                 <td>${data.weatherData.main.humidity}</td>
                 <td>${data.weatherData.wind.speed} knots</td>
                 <td>${data.sportsData.sport1}</td>
+                <td>${data.sportsData.sport6}</td>
+                <tr>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>${data.sportsData.sport2}</td>
-                <td>${data.sportsData.sport3} </td>
-                <td>${data.sportsData.sport4} </td>
+                <td>${data.sportsData.sport7}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>${data.sportsData.sport3}</td>
+                <td>${data.sportsData.sport8}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>${data.sportsData.sport4}</td>
+                <td>${data.sportsData.sport9}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>${data.sportsData.sport5}</td>
+                <td>${data.sportsData.sport10}</td>
+            </tr>
             </tr>
         </table>
     </div>
