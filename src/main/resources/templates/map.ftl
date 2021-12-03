@@ -161,7 +161,8 @@
                 <td>Temperature</td>
                 <td>Humidity</td>
                 <td>Wind</td>
-                <td>Recommended Sports</td>
+                <td>Recommended Indoor Sports</td>
+                <td>Recommended Outdoor Sports</td>
             </tr>
             <tr>
                 <#--        // values need to be set base location and weather-->
