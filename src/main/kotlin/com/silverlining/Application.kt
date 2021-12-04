@@ -4,13 +4,12 @@ import io.ktor.server.netty.*
 import com.silverlining.plugins.*
 import com.silverlining.routes.*
 
-
 fun main()
 {
     embeddedServer(Netty,
                    watchPaths = listOf("ktor-development"),
                    port = 8080,
-                   host = "127.0.0.1")
+                   host = "0.0.0.0")
     {
         // configuration for routing in Installations.kt
         configureInstalls()
