@@ -165,7 +165,7 @@
                 <th>Recommended Outdoor Sports</th>
             </tr>
             <tr>
-                <td title="For plebs, that is ${data.weatherData.main.temp+273} Celsius or ${(data.weatherData.main.temp+273.0)*9/5+32}">${data.weatherData.main.temp} degrees kelvin</td>
+                <td title="For plebs, that is ${data.weatherData.main.temp-273} C or ${(data.weatherData.main.temp-273.0)*9/5+32} F">${data.weatherData.main.temp} degrees kelvin</td>
                 <td>${data.weatherData.main.humidity}</td>
                 <td>${data.weatherData.wind.speed} knots</td>
                 <td>${data.sportsData.sport1}</td>
